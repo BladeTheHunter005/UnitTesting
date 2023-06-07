@@ -23,14 +23,15 @@ public class CILabTest {
         myString.setString("USA");
         assertTrue(myString.detectCapitalUse());
     }
+
     @Test
-    public void detectCapitalUse_AllCapitals_ReturnsTrue(){
+    public void detectCapitalUse_AllCapitals_ReturnsTrue() {
         myString.setString("queenOfTheWorld");
     }
 
 
     @Test
-    public void detectCapitalUse_OnlyFistLetterCapital_ReturnsTrue(){
+    public void detectCapitalUse_OnlyFistLetterCapital_ReturnsTrue() {
         myString.setString("Yahoo");
         assertTrue(myString.detectCapitalUse());
     }
