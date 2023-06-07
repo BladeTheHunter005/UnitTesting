@@ -20,12 +20,19 @@ public class CILabTest {
 
     @Test
     public void detectCapitalUseTest1() {
-       fail("Not yet implemented");
-
+        myString.setString("USA");
+        assertTrue(myString.detectCapitalUse());
     }
     @Test
-    public void detectCapitalUseTest2() {
-        fail("Not yet implemented");
+    public void detectCapitalUse_AllCapitals_ReturnsTrue(){
+        myString.setString("queenOfTheWorld");
+    }
+
+
+    @Test
+    public void detectCapitalUse_OnlyFistLetterCapital_ReturnsTrue(){
+        myString.setString("Yahoo");
+        assertTrue(myString.detectCapitalUse());
     }
 
 
