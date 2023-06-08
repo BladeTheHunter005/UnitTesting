@@ -1,18 +1,10 @@
 language: java
 
 jdk:
-  - openjdk10
-
-before_install:
-  - wget https://github.com/sormuras/bach/raw/master/install-jdk.sh
-  - chmod +x install-jdk.sh
+  - openjdk15
 
 script:
-  - jdk_switcher use openjdk10
-  - # do stuff with OpenJDK 10
-  - export JAVA_HOME=$HOME/openjdk11
-  - ./install-jdk.sh -F 11 --target $JAVA_HOME
-  - # do stuff with OpenJDK 11
+  - # do stuff with OpenJDK 15
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
