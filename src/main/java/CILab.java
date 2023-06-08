@@ -12,29 +12,22 @@ public class CILab implements CILabInterface {
     }
 
     @Override
-public boolean detectCapitalUse() {
-    if (myString == null) {
-        return false;  // or throw an exception, depending on your requirements
+    public boolean detectCapitalUse() {
+        // Check if all characters are uppercase
+        if (myString.equals(myString.toUpperCase())) {
+            return true;
+        }
+
+        // Check if all characters are lowercase
+        if (myString.equals(myString.toLowerCase())) {
+            return true;
+        }
+
+        // Check if only the first character is uppercase
+        if (Character.isUpperCase(myString.charAt(0)) && myString.substring(1).equals(myString.substring(1).toLowerCase())) {
+            return true;
+        }
+
+        return false;
     }
-
-    // Check if all letters are uppercase
-    if (myString.equals(myString.toUpperCase())) {
-        return true;
-    }
-
-    // Check if all letters are lowercase
-    if (myString.equals(myString.toLowerCase())) {
-        return true;
-    }
-
-    // Check if only the first letter is uppercase
-    char firstLetter = myString.charAt(0);
-    String restOfTheString = myString.substring(1);
-    if (Character.isUpperCase(firstLetter) && restOfTheString.equals(restOfTheString.toLowerCase())) {
-        return true;
-    }
-
-    return false;
-}
-
 }
